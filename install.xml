@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<install>
+    <name>ofxOpenNI</name>
+    <version>1.0</version>
+    <author>xzl</author>
+    <url>http://345208116.qzone.qq.com</url>
+    <add>
+        <src>
+            <folder name="addons/ofxOpenNI/src">
+                <file>../../../addons/ofxOpenNI/src/ofxDepthGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxDepthGenerator.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxGestureGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxGestureGenerator.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxHandGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxHandGenerator.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxHardwareDriver.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxHardwareDriver.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxImageGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxImageGenerator.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxIRGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxIRGenerator.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNI.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNIContext.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNIContext.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNIMacros.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNIRecorder.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxOpenNIRecorder.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxTrackedHand.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxTrackedHand.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxTrackedUser.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxTrackedUser.h</file>
+                <file>../../../addons/ofxOpenNI/src/ofxUserGenerator.cpp</file>
+                <file>../../../addons/ofxOpenNI/src/ofxUserGenerator.h</file>
+            </folder>
+        </src>
+        <include>
+            <path>../../../addons/ofxOpenNI/src</path>
+            <path>../../../addons/ofxOpenNI/libs/include/libusb</path>
+            <path>../../../addons/ofxOpenNI/libs/include/nite</path>
+            <path>../../../addons/ofxOpenNI/libs/include/openni</path>
+        </include>
+        <link>
+            <lib os="win32" compiler="codeblocks">../../../addons/ofxOpenNI/libs/lib/openNI.lib</lib>
+        </link>
+    </add>
+</install>
