@@ -52,6 +52,7 @@ public:
 
 	bool				IsListenUser(){return _bListenUser;}
 	ofxUserListener*	Listener(){return _listener;}
+	ofxTrackedUser*		getTrackedXnUser(XnUserID id);
 	void				NotifyUserIn(int id);
 	void				NotifyUserOut(int id);
 	// add by leslie 20150128---------end

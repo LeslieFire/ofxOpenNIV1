@@ -331,6 +331,27 @@ ofxTrackedUser* ofxUserGenerator::getTrackedUser(int nUserNum) {
 
 }
 
+// add by leslie 20150128---------begin
+ofxTrackedUser*	ofxUserGenerator::getTrackedXnUser(XnUserID id){
+	ofxTrackedUser* trackedUser = NULL;
+
+	found_users = max_num_users;
+
+	XnUserID* users = new XnUserID[max_num_users];
+	user_generator.GetUsers(users, found_users);
+
+	for (int i = 0; i < found_users; ++i){
+		if (tracked_users[i]->skeletonTracking){
+			if (tracked_users[i]->id == id){
+				return tracked_users[i];
+			}
+		}
+	}
+	delete [] users;
+	return NULL;
+}
+// add by leslie 20150128---------end
+
 void ofxUserGenerator::setMaxNumberOfUsers(int nUsers) {
 	// TODO: make this truly dynamic by replacing the define and writing dynamic allocation/deletion functions for the arrays! Lazy method below ;-)
 	if (nUsers <= MAX_NUMBER_USERS) {
@@ -361,8 +382,15 @@ void ofxUserGenerator::update() {
             tracked_users[i]->skeletonCalibrated  = user_generator.GetSkeletonCap().IsCalibrated(users[i]);
             if(tracked_users[i]->skeletonTracking) tracked_users[i]->updateBonePositions();
 		}
+		// add by leslie 20150201---------begin
+		else{
+			cout << "User " <<  users[i] << " is not Tracking!" <<endl;
+			tracked_users[i]->id = users[i];
+			tracked_users[i]->skeletonTracking = user_generator.GetSkeletonCap().IsTracking(users[i]);
+			
+		}
+		// add by leslie 20150201---------end
 	}
-
 	delete [] users;
 
 	if (useMaskPixels) updateUserPixels();
